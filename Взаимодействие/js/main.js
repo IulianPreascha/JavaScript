@@ -54,11 +54,18 @@
 // let accessAllowed = (age > 18) ? true : false;
 // alert(accessAllowed);
 
-let age = prompt('Возраст?', 18);
+// let age = prompt('Возраст?', 18);
 
-let message = (age < 3) ? 'Здравствуй, малыш!' :
-  (age < 18) ? 'Привет!' :
-  (age < 100) ? 'Здравствуйте!' :
-  'Какой необычный возраст!';
+// let message = (age < 3) ? 'Здравствуй, малыш!' :
+//   (age < 18) ? 'Привет!' :
+//   (age < 100) ? 'Здравствуйте!' :
+//   'Какой необычный возраст!';
 
-alert( message );
+// alert( message );
+
+let name = prompt('Какое "официальное" название JavaScript?', "");
+if(name == 'ECMAScript') {
+    alert("Правильно!");
+} else {
+    alert("Не знаете? “ECMAScript”!");
+}
