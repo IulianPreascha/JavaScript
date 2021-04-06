@@ -43,7 +43,13 @@
 
 // alert("" + 1 + 0)
 
-let a = prompt("Первое число?", 1);
-let b = prompt("Второе число?", 2);
+// let a = prompt("Первое число?", 1);
+// let b = prompt("Второе число?", 2);
 
-alert(+a + +b); // 12
+// alert(+a + +b); // 12
+
+//! let result = условие ? значение1 : значение2;
+
+let age = prompt('Сколько вам лет?', '');
+let accessAllowed = (age > 18) ? true : false;
+alert(accessAllowed);
