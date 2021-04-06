@@ -50,6 +50,15 @@
 
 //! let result = условие ? значение1 : значение2;
 
-let age = prompt('Сколько вам лет?', '');
-let accessAllowed = (age > 18) ? true : false;
-alert(accessAllowed);
+// let age = prompt('Сколько вам лет?', '');
+// let accessAllowed = (age > 18) ? true : false;
+// alert(accessAllowed);
+
+let age = prompt('Возраст?', 18);
+
+let message = (age < 3) ? 'Здравствуй, малыш!' :
+  (age < 18) ? 'Привет!' :
+  (age < 100) ? 'Здравствуйте!' :
+  'Какой необычный возраст!';
+
+alert( message );
