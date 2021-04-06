@@ -63,9 +63,18 @@
 
 // alert( message );
 
-let name = prompt('Какое "официальное" название JavaScript?', "");
-if(name == 'ECMAScript') {
-    alert("Правильно!");
+// let name = prompt('Какое "официальное" название JavaScript?', "");
+// if(name == 'ECMAScript') {
+//     alert("Правильно!");
+// } else {
+//     alert("Не знаете? “ECMAScript”!");
+// }
+
+let value = prompt("Напишите число", "");
+if (value > 0) {
+    alert("1");
+} else if (value < 0) {
+    alert("-1");
 } else {
-    alert("Не знаете? “ECMAScript”!");
+    alert("0");
 }
