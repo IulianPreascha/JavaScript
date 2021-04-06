@@ -30,8 +30,20 @@
 
 //! Инкремент/декремент можно использовать в любых выражениях
 
-let counter = 1;
-alert( 2 * ++counter ); // 4
+// let counter = 1;
+// alert( 2 * ++counter ); // 4
 
-let counter = 1;
-alert( 2 * counter++ ); // 2, потому что counter++ возвращает "старое" значение
+// let counter = 1;
+// alert( 2 * counter++ ); // 2, потому что counter++ возвращает "старое" значение
+
+// let counter = 1;
+// alert( 2 * counter );
+// counter++;
+// alert(counter);
+
+// alert("" + 1 + 0)
+
+let a = prompt("Первое число?", 1);
+let b = prompt("Второе число?", 2);
+
+alert(+a + +b); // 12
