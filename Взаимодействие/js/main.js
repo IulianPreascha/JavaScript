@@ -97,25 +97,106 @@
 // if (-1 && 0) alert( 'second' );
 // if (null || -1 && 1) alert( 'third' );
 
-let userName = prompt("Кто там?", '');
+// let userName = prompt("Кто там?", '');
 
-if (userName == "Админ") {
+// if (userName == "Админ") {
 
-    let pass = prompt('Пароль?', '');
+//     let pass = prompt('Пароль?', '');
 
-    if (pass == "Я Главный") {
-        alert("Здравствуйте!");
-    }
-    else if (pass == '' || pass == null) {
-        alert("Отменено");
-    }
-    else {
-        alert("Неверный пароль");
-    }
-}
-else if (userName == '' || userName == null) {
-    alert("Отменено");
-}
-else {
-    alert("Я вас не знаю");
+//     if (pass == "Я Главный") {
+//         alert("Здравствуйте!");
+//     }
+//     else if (pass == '' || pass == null) {
+//         alert("Отменено");
+//     }
+//     else {
+//         alert("Неверный пароль");
+//     }
+// }
+// else if (userName == '' || userName == null) {
+//     alert("Отменено");
+// }
+// else {
+//     alert("Я вас не знаю");
+// }
+
+// let sum = 0;
+
+// while (true) {
+
+//   let value = +prompt("Введите число", '');
+
+//   if (!value) break; // (*)
+
+//   sum += value;
+
+// }
+// alert( 'Сумма: ' + sum );
+
+// for (let i = 0; i < 3; i++) {
+
+//     for (let j = 0; j < 3; j++) {
+  
+//       let input = prompt(`Значение на координатах (${i},${j})`, '');
+  
+//       // Что если мы захотим перейти к Готово (ниже) прямо отсюда?
+  
+//     }
+//   }
+  
+//   alert('Готово!');
+
+// for (let i = 2; i < 10; i++) {
+    
+//     if(i % 2 == 0) 
+//     alert(i);
+    
+// }
+
+// let i = 0;
+
+// while (i < 3) {
+//     alert( `number ${i}!` );
+//     i++;
+// }
+
+// let number;
+
+// do {
+//     number = prompt('pune cifra pula', 0);
+// } while (number <= 100 && number);
+
+// let n = 10;
+
+// nextPrime:
+// for (let i = 2; i <= n; i++) { // Для всех i...
+
+//   for (let j = 2; j < i; j++) { // проверить, делится ли число..
+//     if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+//   }
+
+//   alert( i ); // простое число
+// }
+
+// let browser;
+
+// if (browser == 'edge') {
+//     alert( "You've got the Edge!" );
+// } else if (browser == 'chrome' || browser == 'firefox') {
+//     alert( 'Okay we support these browsers too' );
+// } else {
+//     alert( 'We hope that this page looks ok!' );
+// }
+
+switch (number) {
+    case '0': 
+        alert('Вы ввели число 0');
+        break;
+    case '1': 
+        alert('Вы ввели число 1');
+        break;
+    case '2':
+    case '3': 
+        alert('Вы ввели число 2, а может и 3');
+        break;
 }
