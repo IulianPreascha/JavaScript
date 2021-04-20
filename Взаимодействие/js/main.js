@@ -81,8 +81,41 @@
 
 // let result = (a + b < 4) ? "Мало" : "Много";
 
-let message = (login == 'Сотрудник') ? 'Привет' :
-(login == 'Директор') ? 'Здравствуйте' :
-(login == '') ? 'Нет логина' :
-'';
-alert(message);
+// let message = (login == 'Сотрудник') ? 'Привет' :
+// (login == 'Директор') ? 'Здравствуйте' :
+// (login == '') ? 'Нет логина' :
+// '';
+// alert(message);
+
+// let age = 101;
+// if( age < 14 || age > 90) {
+//     alert("hui");
+// }
+// age;
+
+// if (-1 || 0) alert( 'first' );
+// if (-1 && 0) alert( 'second' );
+// if (null || -1 && 1) alert( 'third' );
+
+let userName = prompt("Кто там?", '');
+
+if (userName == "Админ") {
+
+    let pass = prompt('Пароль?', '');
+
+    if (pass == "Я Главный") {
+        alert("Здравствуйте!");
+    }
+    else if (pass == '' || pass == null) {
+        alert("Отменено");
+    }
+    else {
+        alert("Неверный пароль");
+    }
+}
+else if (userName == '' || userName == null) {
+    alert("Отменено");
+}
+else {
+    alert("Я вас не знаю");
+}
