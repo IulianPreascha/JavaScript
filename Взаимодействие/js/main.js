@@ -188,15 +188,104 @@
 //     alert( 'We hope that this page looks ok!' );
 // }
 
-switch (number) {
-    case 0: 
-        alert('Вы ввели число 0');
-        break;
-    case 1: 
-        alert('Вы ввели число 1');
-        break;
-    case 2:
-    case 3: 
-        alert('Вы ввели число 2, а может и 3');
-        break;
-}
+// switch (number) {
+//     case 0: 
+//         alert('Вы ввели число 0');
+//         break;
+//     case 1: 
+//         alert('Вы ввели число 1');
+//         break;
+//     case 2:
+//     case 3: 
+//         alert('Вы ввели число 2, а может и 3');
+//         break;
+// }
+
+// function showMessage(a, b) { // аргументы: from, text
+//     alert(a + ': ' + b);
+//   }
+  
+//   showMessage('Аня', 'Привет!'); // Аня: Привет! (*)
+//   showMessage('Аня', "Как дела?"); // Аня: Как дела? (**)
+
+// function checkAge(age) {
+//     if (age > 18) {
+//       return true;
+//     } else {
+//       return prompt('А родители разрешили?');
+//     }
+//   }
+  
+//   let age = prompt('Сколько вам лет?', 18);
+  
+//   if ( checkAge(age) ) {
+//     alert( 'Доступ получен' );
+//   } else {
+//     alert( 'Доступ закрыт' );
+//   }
+
+// function showPrimes(n) {
+//     nextPrime: for (let i = 2; i < n; i++) {
+  
+//       for (let j = 2; j < i; j++) {
+//         if (i % j == 0) continue nextPrime;
+//       }
+  
+//       alert( i ); // простое
+//     }
+//   }
+  
+// showPrimes(10);
+
+//! GOVNO
+
+// let n;
+// let x;
+// let sum;
+
+// function powNumber(n,x) {
+//     while(x) {
+//         sum = n * n;
+//         x--;
+//     }
+//     alert(sum);
+// }
+
+// powNumber(3,3);
+
+//! NORMAL
+
+// function pow(x, n) {
+//     let result = x;
+  
+//     for (let i = 1; i < n; i++) {
+//       result *= x;
+//     }
+  
+//     return result;
+//   }
+  
+//   let x = prompt("x?", '');
+//   let n = prompt("n?", '');
+  
+//   if (n < 1) {
+//     alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+//   } else {
+//     alert( pow(x, n) );
+//   }
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+  }
+  
+  function showOk() {
+    alert( "Вы согласны." );
+  }
+  
+  function showCancel() {
+    alert( "Вы отменили выполнение." );
+  }
+  
+  // использование: функции showOk, showCancel передаются в качестве аргументов ask
+  ask("Вы согласны?", showOk, showCancel);
