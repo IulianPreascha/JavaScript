@@ -298,7 +298,6 @@
 
 // welcome(); // теперь всё в порядке
 
-
 function ask(question, yes, no) {
   if (confirm(question)) yes()
   else no();
