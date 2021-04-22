@@ -274,18 +274,38 @@
 //     alert( pow(x, n) );
 //   }
 
+// function ask(question, yes, no) {
+//     if (confirm(question)) yes()
+//     else no();
+//   }
+  
+//   function showOk() {
+//     alert( "Вы согласны." );
+//   }
+  
+//   function showCancel() {
+//     alert( "Вы отменили выполнение." );
+//   }
+  
+//   // использование: функции showOk, showCancel передаются в качестве аргументов ask
+//   ask("Вы согласны?", showOk, showCancel);
+
+// let age = prompt("Сколько Вам лет?", 18);
+
+// let welcome = (age < 18) ?
+//   () => alert('Привет') :
+//   () => alert("Здравствуйте!");
+
+// welcome(); // теперь всё в порядке
+
+
 function ask(question, yes, no) {
-    if (confirm(question)) yes()
-    else no();
-  }
-  
-  function showOk() {
-    alert( "Вы согласны." );
-  }
-  
-  function showCancel() {
-    alert( "Вы отменили выполнение." );
-  }
-  
-  // использование: функции showOk, showCancel передаются в качестве аргументов ask
-  ask("Вы согласны?", showOk, showCancel);
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);
