@@ -298,13 +298,28 @@
 
 // welcome(); // теперь всё в порядке
 
-function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
-}
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes()
+//   else no();
+// }
 
-ask(
-  "Вы согласны?",
-  () => alert("Вы согласились."),
-  () => alert("Вы отменили выполнение.")
-);
+// ask(
+//   "Вы согласны?",
+//   () => alert("Вы согласились."),
+//   () => alert("Вы отменили выполнение.")
+// );
+
+function pow(x, n) {
+  if (n < 0) {
+    alert("Отрицательные значения 'n' не поддерживаются");
+    return;
+  }
+
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
