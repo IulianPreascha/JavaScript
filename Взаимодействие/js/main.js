@@ -345,22 +345,40 @@
 
 //! Good code
 
-function pow(x, n) {
-  let result = 1;
+// function pow(x, n) {
+//   let result = 1;
 
-  for (let i = 0; i < n; i++) {
-    result *= x;
+//   for (let i = 0; i < n; i++) {
+//     result *= x;
+//   }
+
+//   return result;
+// }
+
+// let x = prompt("x?", "");
+// let n = prompt("n?", "");
+
+// if (n < 0) {
+//   alert(`Степень ${n} не поддерживается,
+//     введите целую степень, большую 0`);
+// } else {
+//   alert( pow(x, n) );
+// }
+
+//? shwowPrime 
+function showPrimes(n) {
+
+  for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;
+
+    alert(i);
   }
-
-  return result;
 }
 
-let x = prompt("x?", "");
-let n = prompt("n?", "");
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) return false;
+  }
 
-if (n < 0) {
-  alert(`Степень ${n} не поддерживается,
-    введите целую степень, большую 0`);
-} else {
-  alert( pow(x, n) );
+  return true;
 }
