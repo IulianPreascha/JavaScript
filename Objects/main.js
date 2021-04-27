@@ -310,10 +310,38 @@
 //   user.sizes.width++;       // меняем свойство в одном объекте
 //   alert(clone.sizes.width); // 51, видим результат в другом объекте
 
-function multiplyNumeric(obj) {
-    for( let key in obj ) {
-        if( typeof obj[key] === 'numeric' ) {
-            obj[key] *= 2;
-        }
+// function multiplyNumeric(obj) {
+//     for( let key in obj ) {
+//         if( typeof obj[key] === 'numeric' ) {
+//             obj[key] *= 2;
+//         }
+//     }
+// }
+
+// эти объекты делают одно и то же (одинаковые методы)
+
+//! OOП
+
+// user = {
+//     sayHi: function() {
+//       alert("Привет");
+//     }
+//   };
+  
+//   // сокращённая запись выглядит лучше, не так ли?
+//   user = {
+//     sayHi() { // то же самое, что и "sayHi: function()"
+//       alert("Привет");
+//     }
+//   };
+
+//? This
+
+const video = {
+    title: 'a',
+    play() {
+        console.log(this);
     }
-}
+};
+
+video.play();
