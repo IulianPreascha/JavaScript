@@ -420,20 +420,33 @@
 
 //! NICE 
 
-let ladder = {
-    step: 0,
-    up() {
-      this.step++;
-      return this;
-    },
-    down() {
-      this.step--;
-      return this;
-    },
-    showStep() {
-      alert( this.step );
-      return this;
-    }
-  }
+// let ladder = {
+//     step: 0,
+//     up() {
+//       this.step++;
+//       return this;
+//     },
+//     down() {
+//       this.step--;
+//       return this;
+//     },
+//     showStep() {
+//       alert( this.step );
+//       return this;
+//     }
+//   }
   
-  ladder.up().up().down().up().down().showStep(); // 1
+//   ladder.up().up().down().up().down().showStep(); // 1
+
+//! Construction-Function
+
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Вася");
+
+alert(User.name); // Вася
+alert(User.isAdmin); // false
+
