@@ -599,48 +599,70 @@ vasya = {
 //   [id]: 123 // просто "id: 123" не сработает
 // };
 
-let id = Symbol("id");
+// let id = Symbol("id");
+// let user = {
+//   name: "Вася",
+//   age: 30,
+//   [id]: 123
+// };
+
+// for (let key in user) alert(key); // name, age (свойства с ключом-символом нет среди перечисленных)
+
+// // хотя прямой доступ по символу работает
+// alert( "Напрямую: " + user[id] );
+
+// let id = Symbol("id");
+// let user = {
+//   [id]: 123
+// };
+
+// let clone = Object.assign({}, user);
+
+// alert( clone[id] ); // 123
+
+// // читаем символ из глобального реестра и записываем его в переменную
+// let id = Symbol.for("id"); // если символа не существует, он будет создан
+
+// // читаем его снова в другую переменную (возможно, из другого места кода)
+// let idAgain = Symbol.for("id");
+
+// // проверяем -- это один и тот же символ
+// alert( id === idAgain ); // true
+
+// // получаем символ по имени
+// let sym = Symbol.for("name");
+// let sym2 = Symbol.for("id");
+
+// // получаем имя по символу
+// alert( Symbol.keyFor(sym) ); // name
+// alert( Symbol.keyFor(sym2) ); // id
+
+// let globalSymbol = Symbol.for("name");
+// let localSymbol = Symbol("name");
+
+// alert( Symbol.keyFor(globalSymbol) ); // name, глобальный символ
+// alert( Symbol.keyFor(localSymbol) ); // undefined для неглобального символа
+
+// alert( localSymbol.description ); // name
+
+//! Symbol.to.Primitive
+
+// obj[Symbol.toPrimitive] = function(hint) {
+//   // должен вернуть примитивное значение
+//   // hint равно чему-то одному из: "string", "number" или "default"
+// };
+
 let user = {
-  name: "Вася",
-  age: 30,
-  [id]: 123
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
 };
 
-for (let key in user) alert(key); // name, age (свойства с ключом-символом нет среди перечисленных)
-
-// хотя прямой доступ по символу работает
-alert( "Напрямую: " + user[id] );
-
-let id = Symbol("id");
-let user = {
-  [id]: 123
-};
-
-let clone = Object.assign({}, user);
-
-alert( clone[id] ); // 123
-
-// читаем символ из глобального реестра и записываем его в переменную
-let id = Symbol.for("id"); // если символа не существует, он будет создан
-
-// читаем его снова в другую переменную (возможно, из другого места кода)
-let idAgain = Symbol.for("id");
-
-// проверяем -- это один и тот же символ
-alert( id === idAgain ); // true
-
-// получаем символ по имени
-let sym = Symbol.for("name");
-let sym2 = Symbol.for("id");
-
-// получаем имя по символу
-alert( Symbol.keyFor(sym) ); // name
-alert( Symbol.keyFor(sym2) ); // id
-
-let globalSymbol = Symbol.for("name");
-let localSymbol = Symbol("name");
-
-alert( Symbol.keyFor(globalSymbol) ); // name, глобальный символ
-alert( Symbol.keyFor(localSymbol) ); // undefined для неглобального символа
-
-alert( localSymbol.description ); // name
+// демонстрация результатов преобразований:
+alert(user); // hint: string -> {name: "John"}
+alert(+user); // hint: number -> 1000
+alert(user + 500); // hint: default -> 1500
