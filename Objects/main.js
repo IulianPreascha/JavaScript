@@ -440,13 +440,111 @@
 
 //! Construction-Function
 
-function User(name) {
-  this.name = name;
-  this.isAdmin = false;
+// function User(name) {
+//   this.name = name;
+//   this.isAdmin = false;
+// }
+
+// let user = new User("Вася");
+
+// alert(User.name); // Вася
+// alert(User.isAdmin); // false
+
+//? User Target 
+
+// function User() {
+//   alert(new.target);
+// }
+
+// // без "new":
+// User(); // undefined
+
+// // с "new":
+// new User(); // function User { ... }
+
+//? New user
+
+// function User(name) {
+//   if (!new.target) { // в случае, если вы вызвали без оператора new
+//     return new User(name); // ...добавим оператор new за вас
+//   }
+
+//   this.name = name;
+// }
+
+// let vasya = User("Вася"); // переадресовывает вызовы на new User
+// alert(vasya.name); // Вася
+
+//? Method construction 
+
+// function User(name) {
+//   this.name = name;
+
+//   this.sayHi = function() {
+//     alert( "Меня зовут: " + this.name );
+//   };
+// }
+
+// let vasya = new User("Вася");
+
+// vasya.sayHi(); // Меня зовут: Вася
+
+/*
+vasya = {
+   name: "Вася",
+   sayHi: function() { ... }
+}
+*/
+
+//TODO Homework
+
+//TODO (1)
+
+// let obj = {};
+
+// function A() { return obj; }
+// function B() { return obj; }
+
+// alert( new A() == new B() ); // true
+
+//TODO (2)
+
+// function Calculator() {
+
+//   this.read = function() {
+//     this.a = +prompt('a?', 0);
+//     this.b = +prompt('b?', 0);
+//   };
+
+//   this.sum = function() {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function() {
+//     return this.a * this.b;
+//   };
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+//TODO (3)
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('Сколько нужно добавить?', 0);
+  };
+
 }
 
-let user = new User("Вася");
+let accumulator = new Accumulator(1); // начальное значение 1
 
-alert(User.name); // Вася
-alert(User.isAdmin); // false
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
 
+alert(accumulator.value); // выведет сумму этих значений
