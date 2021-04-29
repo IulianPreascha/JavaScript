@@ -533,18 +533,114 @@ vasya = {
 
 //TODO (3)
 
-function Accumulator(startingValue) {
-  this.value = startingValue;
+// function Accumulator(startingValue) {
+//   this.value = startingValue;
 
-  this.read = function() {
-    this.value += +prompt('Сколько нужно добавить?', 0);
-  };
+//   this.read = function() {
+//     this.value += +prompt('Сколько нужно добавить?', 0);
+//   };
 
-}
+// }
 
-let accumulator = new Accumulator(1); // начальное значение 1
+// let accumulator = new Accumulator(1); // начальное значение 1
 
-accumulator.read(); // прибавит ввод prompt к текущему значению
-accumulator.read(); // прибавит ввод prompt к текущему значению
+// accumulator.read(); // прибавит ввод prompt к текущему значению
+// accumulator.read(); // прибавит ввод prompt к текущему значению
 
-alert(accumulator.value); // выведет сумму этих значений
+// alert(accumulator.value); // выведет сумму этих значений
+
+//! Symbol
+
+// // Создаём новый символ - id
+// let id = Symbol();
+
+// // Создаём символ id с описанием (именем) "id"
+// let id = Symbol("id");
+
+// let id1 = Symbol("id");
+// let id2 = Symbol("id");
+
+// alert(id1 == id2); // false
+
+// let id = Symbol("id");
+// alert(id); // TypeError: Cannot convert a Symbol value to a string
+
+// let id = Symbol("id");
+// alert(id.toString()); // Symbol(id), теперь работает
+
+// let user = {
+//   name: "Вася"
+// };
+
+// let id = Symbol("id");
+
+// user[id] = 1;
+
+// alert( user[id] ); // мы можем получить доступ к данным по ключу-символу
+
+// let id = Symbol("id");
+
+// user[id] = "Их идентификатор";
+
+// let user = { name: "Вася" };
+
+// // Объявляем в нашем скрипте свойство "id"
+// user.id = "Наш идентификатор";
+
+// // ...другой скрипт тоже хочет свой идентификатор...
+
+// user.id = "Их идентификатор"
+// // Ой! Свойство перезаписано сторонней библиотекой!
+
+// let id = Symbol("id");
+
+// let user = {
+//   name: "Вася",
+//   [id]: 123 // просто "id: 123" не сработает
+// };
+
+let id = Symbol("id");
+let user = {
+  name: "Вася",
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user) alert(key); // name, age (свойства с ключом-символом нет среди перечисленных)
+
+// хотя прямой доступ по символу работает
+alert( "Напрямую: " + user[id] );
+
+let id = Symbol("id");
+let user = {
+  [id]: 123
+};
+
+let clone = Object.assign({}, user);
+
+alert( clone[id] ); // 123
+
+// читаем символ из глобального реестра и записываем его в переменную
+let id = Symbol.for("id"); // если символа не существует, он будет создан
+
+// читаем его снова в другую переменную (возможно, из другого места кода)
+let idAgain = Symbol.for("id");
+
+// проверяем -- это один и тот же символ
+alert( id === idAgain ); // true
+
+// получаем символ по имени
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// получаем имя по символу
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id
+
+let globalSymbol = Symbol.for("name");
+let localSymbol = Symbol("name");
+
+alert( Symbol.keyFor(globalSymbol) ); // name, глобальный символ
+alert( Symbol.keyFor(localSymbol) ); // undefined для неглобального символа
+
+alert( localSymbol.description ); // name
