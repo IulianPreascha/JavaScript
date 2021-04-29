@@ -10,8 +10,26 @@
 
 //TODO Homework 
 
-let str = "Привет";
+// let str = "Привет";
 
-str.test = 5;
+// str.test = 5;
 
-alert(str.test);
+// alert(str.test);
+
+//! Numbers 
+
+// alert( Math.round(6.35 * 10) / 10);
+
+function readNumber() {
+  let num;
+
+  do {
+    num = prompt("Введите число", 0);
+  } while ( !isFinite(num) );
+
+  if (num === null || num === '') return null;
+
+  return +num;
+}
+
+alert(`Число: ${readNumber()}`);
